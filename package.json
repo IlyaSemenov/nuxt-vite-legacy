@@ -4,6 +4,10 @@
   "description": "Nuxt.js legacy browsers build plugin",
   "author": "Ilya Semenov",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IlyaSemenov/nuxt-vite-legacy"
+  },
   "type": "module",
   "exports": {
     ".": {

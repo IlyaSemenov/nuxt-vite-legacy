@@ -9,7 +9,7 @@ Uses [@vitejs/plugin-legacy](https://www.npmjs.com/package/@vitejs/plugin-legacy
 Install:
 
 ```sh
-npm install nuxt-vite-legacy
+npm install nuxt-vite-legacy --save-dev
 ```
 
 Add `nuxt-vite-legacy` to the `modules` section of `nuxt.config.ts`:

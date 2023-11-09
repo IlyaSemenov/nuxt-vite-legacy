@@ -1,14 +1,14 @@
 /**
- * Copy of @vitejs/plugin-legacy. Keep in sync with upstream.
+ * Copy of `@vitejs/plugin-legacy@4.0.3` options. Keep in sync with upstream.
  *
- * It's not exported from @vitejs/plugin-legacy, so can't be re-exported by nuxt-vite-legacy even if picked with something like:
+ * This type isn't exported from `@vitejs/plugin-legacy`, so it can't be re-exported by nuxt-vite-legacy even if picked with something like:
  *
  * ```ts
  * import legacy from "@vitejs/plugin-legacy"
  * type Options = Exclude<Parameters<typeof legacy>[0], undefined>
  * ```
  *
- * That gives TS build error:
+ * which would give TS build error:
  *
  * ```
  * src/module.ts(6,1): error TS4082: Default export of the module has or is using private name 'Options'.

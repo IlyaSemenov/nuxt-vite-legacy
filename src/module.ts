@@ -1,39 +1,13 @@
 import { addServerPlugin, createResolver, defineNuxtModule } from "@nuxt/kit"
 import legacy from "@vitejs/plugin-legacy"
 
-// Copy of @vitejs/plugin-legacy options type, with renderLegacyChunks and externalSystemJS omitted.
-// I would rather reuse it:
-//
-// export type ModuleOptions = Omit<Exclude<Parameters<typeof legacy>[0], undefined>, 'renderLegacyChunks' | 'externalSystemJS'>
-//
-// But that gives TS build error:
-// src/module.ts(6,1): error TS4082: Default export of the module has or is using private name 'Options'.
+import type { Options as LegacyOptions } from "./vitejs-plugin-legacy"
 
-/** `@vitejs/plugin-legacy` options */
-interface ModuleOptions {
-  /**
-   * default: 'defaults'
-   */
-  targets?:
-    | string
-    | string[]
-    | {
-        [key: string]: string
-      }
-  /**
-   * default: false
-   */
-  ignoreBrowserslistConfig?: boolean
-  /**
-   * default: true
-   */
-  polyfills?: boolean | string[]
-  additionalLegacyPolyfills?: string[]
-  /**
-   * default: false
-   */
-  modernPolyfills?: boolean | string[]
-}
+/** `@vitejs/plugin-legacy` options (excluding `renderLegacyChunks` and `externalSystemJS`) */
+export type ModuleOptions = Omit<
+  LegacyOptions,
+  "renderLegacyChunks" | "externalSystemJS"
+>
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -49,12 +23,12 @@ export default defineNuxtModule<ModuleOptions>({
     // See https://github.com/nuxt/nuxt/issues/15464
     nuxt.hook("build:manifest", (manifest) => {
       const key = Object.keys(manifest).find((key) =>
-        key.endsWith("/legacy-polyfills-legacy")
+        key.endsWith("/legacy-polyfills-legacy"),
       )
       if (!key) {
         if (!nuxt.options.dev) {
           console.warn(
-            `nuxt-vite-legacy didn't find legacy-polyfills-legacy chunk. Legacy build will not work.`
+            `nuxt-vite-legacy didn't find legacy-polyfills-legacy chunk. Legacy build will not work.`,
           )
         }
         return

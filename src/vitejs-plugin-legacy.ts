@@ -1,7 +1,11 @@
 /**
- * Copy of `@vitejs/plugin-legacy@4.0.3` options. Keep in sync with upstream.
+ * Copy of `@vitejs/plugin-legacy@4.1.1` options. Keep in sync with upstream.
  *
- * This type isn't exported from `@vitejs/plugin-legacy`, so it can't be re-exported by nuxt-vite-legacy even if picked with something like:
+ * When using with older @vitejs/plugin-legacy versions, keep in mind their type definitions
+ * (e.g. `renderModernChunks` was only added in 4.1).
+ *
+ * Rationale: this type isn't exported by `@vitejs/plugin-legacy`, so it can't be re-exported
+ * by nuxt-vite-legacy even if picked with something like:
  *
  * ```ts
  * import legacy from "@vitejs/plugin-legacy"
@@ -45,4 +49,8 @@ export interface Options {
    * default: false
    */
   externalSystemJS?: boolean
+  /**
+   * default: true
+   */
+  renderModernChunks?: boolean
 }

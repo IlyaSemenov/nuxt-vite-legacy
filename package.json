@@ -23,11 +23,11 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "dev:start": "nuxi start playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
@@ -38,10 +38,10 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxt/module-builder": "^0.3.1",
-    "@nuxt/schema": "^3.5.0",
-    "@nuxt/test-utils": "^3.5.0",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.8.1",
+    "@nuxt/test-utils": "^3.8.1",
     "@types/node": "^20.9.0",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
@@ -50,7 +50,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "mdn-polyfills": "^5.20.0",
-    "nuxt": "^3.5.0",
+    "nuxt": "^3.8.1",
     "vitest": "^0.34.6"
   }
 }

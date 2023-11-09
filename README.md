@@ -4,6 +4,8 @@ Nuxt module to make your Nuxt3 app compatible with legacy browsers.
 
 Uses [@vitejs/plugin-legacy](https://www.npmjs.com/package/@vitejs/plugin-legacy) and applies a number of hacks that Nuxt.js team [decided to avoid](https://github.com/nuxt/nuxt/issues/15464#issuecomment-1596895289).
 
+Tested on Nuxt 3.4 to 3.8.
+
 ## Quick Setup
 
 Install:

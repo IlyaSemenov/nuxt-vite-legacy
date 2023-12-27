@@ -1,5 +1,11 @@
 # nuxt-vite-legacy
 
+## 1.2.0
+
+### Minor Changes
+
+- 466f7b0: Use Nuxt v3.9 and Vite 5.
+
 ## 1.1.0
 
 ### Minor Changes

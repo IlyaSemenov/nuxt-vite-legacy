@@ -11,7 +11,8 @@ describe("ssr", async () => {
   it("adds nomodule legacy chunk", async () => {
     const html = await $fetch("/")
     expect(html).toMatch(
-      /<script src="\/_nuxt\/polyfills-legacy\.\w+\.js" nomodule crossorigin>/
+      // Different versions of Nuxt / @vitejs/plugin-legacy emit different file names.
+      /<script src="\/_nuxt\/\w+-legacy(\.\w+)?\.js" nomodule crossorigin>/
     )
   })
 })

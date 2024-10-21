@@ -14,7 +14,7 @@ export default defineNitroPlugin((nitroApp) => {
     // Remove legacy chunks preload (fixes warnings in modern browsers).
     // Note that different versions of Nuxt emit slightly different HTML.
     response.body = response.body.replace(
-      /<link rel="preload"[^>]+ href="[^"]+-legacy\.\w+\.js".*?>/g,
+      /<link rel="preload"[^>]* href="[^"]+-legacy(\.\w+)?\.js".*?>\n/g,
       "",
     )
 

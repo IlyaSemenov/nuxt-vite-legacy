@@ -1,0 +1,5 @@
+[env]
+MISE_NODE_COREPACK = 1
+
+[tools]
+node = '20.4.0'

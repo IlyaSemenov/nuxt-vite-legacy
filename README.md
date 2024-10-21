@@ -38,8 +38,10 @@ However, this leaves incompatibility window for legacy browsers that **do** supp
 
 ## Development and Testing
 
+Install Node 20, then:
+
 ```sh
-npm i -g pnpm
+corepack enable
 pnpm i
 pnpm dev:prepare
 pnpm dev:build && pnpm dev:start

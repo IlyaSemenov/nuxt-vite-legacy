@@ -28,6 +28,7 @@ export default defineNuxtModule<LegacyOptions>({
 
       // Clear manifest in-place.
       for (const key of Object.keys(manifest)) {
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete manifest[key]
       }
 

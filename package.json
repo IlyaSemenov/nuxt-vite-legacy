@@ -1,7 +1,7 @@
 {
   "name": "nuxt-vite-legacy",
   "version": "1.2.0",
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@9.12.2",
   "description": "Nuxt.js legacy browsers build plugin",
   "author": "Ilya Semenov",
   "license": "MIT",
@@ -24,7 +24,7 @@
   ],
   "engines": {
     "node": "20",
-    "pnpm": "8"
+    "pnpm": "9"
   },
   "scripts": {
     "prepare": "husky install",

@@ -4,7 +4,7 @@ Nuxt module to make your Nuxt3 app compatible with legacy browsers.
 
 Uses [@vitejs/plugin-legacy](https://www.npmjs.com/package/@vitejs/plugin-legacy) and applies a number of hacks that Nuxt.js team [decided to avoid](https://github.com/nuxt/nuxt/issues/15464#issuecomment-1596895289).
 
-Tested on Nuxt 3.4 to 3.8.
+Tested on Nuxt 3.4 to 3.8, and also on Nuxt 3.13.
 
 ## Quick Setup
 
@@ -31,6 +31,14 @@ export default defineNuxtConfig({
 ```
 
 ## Caveats
+
+### Upgrading
+
+Nuxt and `@vitejs/plugin-legacy` are upgraded separately and the whole matrix is not well tested. The module may behave incorrectly with older Nuxt and newer `@vitejs/plugin-legacy` or vice versa.
+
+Please report if you encounter issues; better yet, a PR adding the Github action testing matrix would be much appreciated.
+
+### Legacy browsers that had just begin to support modules
 
 The legacy build will be used for browsers that don't support `<script module>` which is enough most of the time.
 

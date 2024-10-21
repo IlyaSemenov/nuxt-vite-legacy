@@ -1,5 +1,11 @@
 # nuxt-vite-legacy
 
+## 1.3.0
+
+### Minor Changes
+
+- 24d68e3: Support Nuxt 3.13, @vitejs/plugin-legacy 5.4.
+
 ## 1.2.0
 
 ### Minor Changes

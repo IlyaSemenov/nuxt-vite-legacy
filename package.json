@@ -22,10 +22,6 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": "22",
-    "pnpm": "9"
-  },
   "scripts": {
     "prepare": "husky",
     "prepack": "nuxt-module-build build",

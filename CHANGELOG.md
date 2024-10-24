@@ -1,5 +1,11 @@
 # nuxt-vite-legacy
 
+## 1.3.1
+
+### Patch Changes
+
+- 6709f61: Remove `"engines"` from `package.json`.
+
 ## 1.3.0
 
 ### Minor Changes

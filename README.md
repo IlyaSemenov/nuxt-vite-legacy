@@ -32,17 +32,15 @@ export default defineNuxtConfig({
 
 ## Caveats
 
-### Upgrading
+The legacy build will be used for browsers that don't support `<script module>` which is enough most of the time.
+
+However, this leaves incompatibility window for legacy browsers that **do** support modules but don't support modern features such as async generators (based on caniuse that would be e.g. Chrome 61-62). Vanilla `@vitejs/plugin-legacy` injects [special detection scripts](https://github.com/vitejs/vite/blob/535795a8286e4a9525acd2340e1d1d1adfd70acf/packages/plugin-legacy/src/snippets.ts) into SSR HTML, which this Nuxt module doesn't. PR's welcome!
+
+## Upgrading
 
 Nuxt and `@vitejs/plugin-legacy` are upgraded separately and the whole matrix is not well tested. The module may behave incorrectly with older Nuxt and newer `@vitejs/plugin-legacy` or vice versa.
 
 Please report if you encounter issues; better yet, a PR adding the Github action testing matrix would be much appreciated.
-
-### Legacy browsers that had just begin to support modules
-
-The legacy build will be used for browsers that don't support `<script module>` which is enough most of the time.
-
-However, this leaves incompatibility window for legacy browsers that **do** support modules but don't support modern features such as async generators (based on caniuse that would be e.g. Chrome 61-62). Vanilla `@vitejs/plugin-legacy` injects [special detection scripts](https://github.com/vitejs/vite/blob/535795a8286e4a9525acd2340e1d1d1adfd70acf/packages/plugin-legacy/src/snippets.ts) into SSR HTML, which this Nuxt module doesn't. PR's welcome!
 
 ## Development and Testing
 

@@ -49,6 +49,7 @@
     "lint-staged": "^15.2.11",
     "mdn-polyfills": "^5.20.0",
     "nuxt": "^3.15.0",
+    "typescript": "^5.6.3 <5.7",
     "vite": "^6.0.6",
     "vitest": "^2.1.8"
   }

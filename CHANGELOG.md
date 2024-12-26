@@ -1,5 +1,11 @@
 # nuxt-vite-legacy
 
+## 2.0.0
+
+### Major Changes
+
+- 5f729cd: Update to Nuxt 3.15 / Vite 6.
+
 ## 1.3.1
 
 ### Patch Changes

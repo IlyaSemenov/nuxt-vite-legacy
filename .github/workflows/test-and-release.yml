@@ -1,5 +1,8 @@
 name: Test and Release
 
+env:
+  MAIN_REF: refs/heads/master
+
 on:
   push:
     branches: ["**"]
@@ -10,6 +13,7 @@ jobs:
   test-and-release:
     name: Test and Release
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,8 +24,8 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.4.0
-          cache: "pnpm"
+          node-version: 20.4
+          cache: pnpm
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
@@ -32,11 +36,21 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Capture new release versions
+        if: ${{ github.ref == env.MAIN_REF }}
+        run: |
+          if pnpx @changesets/cli status --output=release.json; then
+            echo "CHANGED_PACKAGES=$(jq -r '.releases | map(.newVersion) | join(", ")' release.json)" >> "$GITHUB_ENV"
+            rm release.json
+          fi
+
       - name: Create Release Pull Request or Publish to npm
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == env.MAIN_REF }}
         uses: changesets/action@v1
         with:
           publish: pnpm changeset publish
+          title: "Release version ${{env.CHANGED_PACKAGES}}"
+          commit: "Release version ${{env.CHANGED_PACKAGES}}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

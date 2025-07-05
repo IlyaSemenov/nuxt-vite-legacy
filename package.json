@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.15.0",
-    "@vitejs/plugin-legacy": "^6.0.0"
+    "@vitejs/plugin-legacy": "^6 || ^7"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",

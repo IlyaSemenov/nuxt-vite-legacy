@@ -1,5 +1,11 @@
 # nuxt-vite-legacy
 
+## 2.0.1
+
+### Patch Changes
+
+- 420c529: Proactively allow vite v7 (#23).
+
 ## 2.0.0
 
 ### Major Changes
